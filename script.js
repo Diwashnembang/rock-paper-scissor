@@ -55,17 +55,17 @@ function winnerCheck(userChoice,cmpChoice){
     
     //compare userChoice and cmpChoice rock>scissors scissors>paper paper>rock
     //return the result 
-    if( (userChoice.toUpperCase()=="ROCK" && cmpChoice=="ROCK") ||(userChoice=="PAPER" && cmpChoice=="PAPER")||(userChoice.toUpperCase()=="SCISSOR" && cmpChoice=="SCISSOR")){
+    if( (userChoice.toUpperCase()=="ROCK" && cmpChoice=="ROCK") ||(userChoice.toUpperCase() && cmpChoice=="PAPER")||(userChoice.toUpperCase()=="SCISSOR" && cmpChoice=="SCISSOR")){
         return "IT'S A DRAW"
     }
 
 
-    if((userChoice.toUpperCase()=="ROCK" && cmpChoice=="SCISSOR")||(userChoice=="PAPER" && cmpChoice=="ROCK")||(userChoice.toUpperCase()=="SCISSOR" && cmpChoice=="PAPER")){
+    if((userChoice.toUpperCase()=="ROCK" && cmpChoice=="SCISSOR")||(userChoice.toUpperCase() && cmpChoice=="ROCK")||(userChoice.toUpperCase()=="SCISSOR" && cmpChoice=="PAPER")){
     return "USER WIN"
     }
 
     
-    if((userChoice.toUpperCase()=="ROCK" && cmpChoice=="PAPER")||(userChoice=="PAPER" && cmpChoice=="SCISSOR")||(userChoice.toUpperCase()=="SCISSOR" && cmpChoice=="ROCK")){
+    if((userChoice.toUpperCase()=="ROCK" && cmpChoice=="PAPER")||(userChoice.toUpperCase() && cmpChoice=="SCISSOR")||(userChoice.toUpperCase()=="SCISSOR" && cmpChoice=="ROCK")){
     return "cmp WIN";
     }
     
