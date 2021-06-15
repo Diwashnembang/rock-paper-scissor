@@ -1,3 +1,11 @@
+/*the odin project 
+rock paper and scissor game in conslol
+15 june 2021
+-diwash nembang*/
+
+
+
+
 // make a randomNumber function and return the random number that takes min and max as parameter
 
 function randomNumber(min,max){
@@ -15,7 +23,7 @@ function computerChoice(){
     let cmpChoice=randomNumber(1,3);
 
     //assigne 1 rock 2 scissor and 3 paper
-    //return cmpChoice
+    //return rock scissors paper
     if(cmpChoice==1){
         return "ROCK";
     }
@@ -42,11 +50,11 @@ function playerChoice(){
 //make  winnerCheck function that takes userChoice and cmpChoice returns the winner 
 function winnerCheck(userChoice,cmpChoice){
 
-    // make a winner string variable to store the result o the game 
+
     
     
     //compare userChoice and cmpChoice rock>scissors scissors>paper paper>rock
-    //return the winner 
+    //return the result 
     if( (userChoice.toUpperCase()=="ROCK" && cmpChoice=="ROCK") ||(userChoice=="PAPER" && cmpChoice=="PAPER")||(userChoice.toUpperCase()=="SCISSOR" && cmpChoice=="SCISSOR")){
         return "IT'S A DRAW"
     }
@@ -64,7 +72,7 @@ function winnerCheck(userChoice,cmpChoice){
 }//end of winnerCheck 
 
 
-// craete a gamePlay function that takes winner as parameter runs the game retirn nothing
+// craete a gamePlay function that  runs the game returnn nothing
 function gamePlay(){
     let userChoice;
     let cmpChoice;
