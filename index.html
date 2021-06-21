@@ -4,8 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper And Scissor</title>
 </head>
 <body>
-    <script src="script.js"></script>
+    <!-- homepage -->
+    <div class="home-page">
+        <header class="title">
+            <h1>Rock Paper & Scissor</h1>
+        </header>
+        
+        <h2>Best Of Five Wins</h2>
+
+        <div class="button">
+            <a href="#game-play">Start</a>
+        </div>
+    </div>
+    <!-- Homepage end -->
+
+    <!-- gameplay -->
+    <main id="game-play">
+        <div id="player">
+            <h2>PLAYER</h2>
+        </div>
+        
+    <section class="img-box grid">
+        <img src="../assets/img/rock.png" alt="rock img" class="rock">
+        <img src="../assets/img/paper.png" alt="rock img" class="paper">
+        <img src="../assets/img/scissor.png" alt="rock img" class="scissor">
+    </section>
+
+    <div id="result-display">
+            <h2>PICK ONE</h2>
+    </div>
+
+    <section id="computer-choose" class="img-box grid">
+            <img src="../assets/img/rock.png" alt="rock img" class="rock">
+            <img src="../assets/img/paper.png" alt="rock img" class="paper">
+            <img src="../assets/img/scissor.png" alt="rock img" class="scissor">
+        </section>
+    <section id="computer">
+
+        <h2>COMPUTER</h2>
+    </section>
+
+        <div class="arrow-img grid ">
+            <img src="../assets/img/Arrow.png" alt="rock img" class="scissor">
+        </div>
+    </main>
+    <!-- gameplay end -->
+
+    <!-- game log  -->
+    <section class="game-log">
+        <div id="game-log-text">
+            <h1>GAME LOG</h1>
+        </div>
+
+        <div class="record-box">
+            <ul class="record grid">
+                <li>Round 1:you won</li>
+                <li>Round 1:you won</li>
+                <li>Round 1:Comp won</li>
+                <li>Round 1:you won</li>
+                <li>Round 1:you won</li>
+            </ul>
+        </div>
+        <div class="try-again button">
+            <a href="#game-play">Play Again??</a>
+        </div>
+    </section>
+    <!-- game-log end  -->
+
+
+
+
+
+    <!-- <script src="script.js"></script> -->
+    
+</body>
 </html>

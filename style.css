@@ -1,0 +1,264 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+
+
+/* variables */
+:root{
+    --yellow:#FFE90B;
+    --white:#FCF9F0;
+    --decoration:#47422E;
+    --for-log:#B0AB99;
+    --log-background:#363112;
+    font-size: 8px;
+}
+
+
+
+/* resets */
+* {
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color:#ffffff;
+
+
+}
+
+/* font */
+@font-face {
+    font-family: 'BACKTO1982';
+    src: url("../assets/font/BACKTO1982.TTF");
+}
+
+
+
+/* base style  */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    column-gap: 16px;
+    padding: 0 8px;
+}
+
+.home-page{
+    background: var(--yellow);
+    height: 100vh;
+    font-family: 'Reem Kufi';
+
+}
+
+#game-play{
+    background: var(--white);
+    height: 100vh;
+    font-family: 'Back to 1982';
+}
+
+.game-log{
+    background: var(--log-background);
+   
+}
+
+.button{
+  
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: var(--decoration);
+    border-radius: 15px;
+
+}
+
+.img-box img{
+    border: solid black 1px;
+    display: inline-block;
+    justify-self: center;
+}
+
+
+.img-box .rock{
+    grid-column: span 2/4;
+   
+}
+
+.img-box .paper{
+    grid-column: 4/6;
+}
+
+.img-box .scissor{
+    grid-column: 6/8;
+}
+
+.paper:hover,.rock:hover,.scissor:hover{
+    transform:scale(1);
+    border: solid var(--yellow) 4px;
+}
+
+
+.game-log{
+    font-family: 'Reem kufi';
+    
+}
+
+.button:hover{
+    transform: scale(1);
+    border:solid var(--white) 6px;
+}
+
+
+/* mobile designe */
+header h1{
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 72px;
+    padding-top: 180px;  
+}
+
+.home-page h2{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 89px;
+
+
+}
+
+.button{
+    width: 192px;
+    margin: 42px auto;
+    
+}
+
+#player h2{
+
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding-top: 60px;
+
+}
+
+.img-box{
+    margin-top: 52px;
+}
+ .img-box img{
+     height: 104px;
+     
+     
+ }
+
+
+
+#result-display h2 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    
+    letter-spacing: 0em;
+    text-align: center;
+   
+    
+    
+}
+#result-display{
+    margin-top: 52px;
+  
+}
+
+#computer-choose{
+    margin-top: 52px;
+}
+
+#computer h2{
+
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 52px;
+
+}
+
+.arrow-img img{
+    display: inline-block;
+    grid-column: 4/6;
+    justify-self: center;
+}
+
+
+.arrow-img{
+    margin-top: 16px;
+
+}
+
+#game-log-text h1{
+    font-family: 'Backto1982';
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding-top: 79px;
+
+
+}
+
+.record-box{
+    background: var(--for-log);
+    margin-top: 52px;
+    display: flex;
+    
+}
+
+.record li:nth-child(n+1){
+    grid-column: span 8;
+    justify-self: start;
+    
+    font-family: Reem Kufi;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0em;
+
+}
+
+.try-again {
+    font-family: Reem Kufi;
+    font-size: 32px;
+    width: 286px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+  
+
+
+}
+
+
+
+/* desktop designe */
+@media  screen and (min-width:620px) {
+
+    
+}

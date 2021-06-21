@@ -1,7 +1,12 @@
 /*the odin project 
 rock paper and scissor game in conslol
 15 june 2021
--diwash nembang*/
+-diwash nembang
+ 
+modification: 1
+
+
+*/
 
 
 
