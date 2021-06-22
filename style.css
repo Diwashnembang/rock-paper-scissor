@@ -9,7 +9,7 @@
     --decoration:#47422E;
     --for-log:#B0AB99;
     --log-background:#363112;
-    font-size: 8px;
+
 }
 
 
@@ -19,6 +19,8 @@
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;
+    font-size: 8px;
+   
 }
 
 li{
@@ -68,21 +70,27 @@ a{
 
 .button{
   
-    font-size: 48px;
+    background: var(--decoration);
+    border-radius: 15px;
+    text-align: center;
+    
+
+}
+
+.button a{
+    font-size: 6rem;
     font-style: normal;
     font-weight: 400;
     line-height: 72px;
     letter-spacing: 0em;
-    text-align: center;
-    background: var(--decoration);
-    border-radius: 15px;
-
+  
 }
 
 .img-box img{
     border: solid black 1px;
     display: inline-block;
     justify-self: center;
+    transition: all 0.1s ease;
 }
 
 
@@ -99,8 +107,8 @@ a{
     grid-column: 6/8;
 }
 
-.paper:hover,.rock:hover,.scissor:hover{
-    transform:scale(1);
+#player-paper:hover,#player-rock:hover,#player-scissor:hover{
+    /* transform:scale(1); */
     border: solid var(--yellow) 4px;
 }
 
@@ -113,6 +121,14 @@ a{
 .button:hover{
     transform: scale(1);
     border:solid var(--white) 6px;
+}
+
+
+
+.buttonOnClick{
+    transform: scale(1);
+    border: solid green 6px !important;
+    
 }
 
 
@@ -165,19 +181,23 @@ header h1{
      
  }
 
-
-
+ 
 #result-display h2 {
+    font-size: 48px;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
     
     letter-spacing: 0em;
     text-align: center;
-   
-    
-    
 }
+
+#result-display{
+    font-size: 6rem;
+    text-align: center;
+}
+
+
 #result-display{
     margin-top: 52px;
   

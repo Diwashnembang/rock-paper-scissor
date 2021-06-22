@@ -11,91 +11,141 @@ modification: 1
 
 
 
-// make a randomNumber function and return the random number that takes min and max as parameter
+// generate random number 
 
 function randomNumber(min,max){
 
-    return Math.floor(Math.random()*(max-min+1)+min) //returns us a random intetger max and min both inclusive 
-
-}//end of randomNumber function 
+    return Math.floor(Math.random()*(max-min+1)+min);
 
 
-//make a function that controls computer choice and returns cmpChoice
+}
+
+
 function computerChoice(){
-
-    //create a integer variable call cmpChoice that store the computer choice  
-    //make computer chose randome number (with randomNumber Function) from 1 to 3 and store it to cmpChoise 
     let cmpChoice=randomNumber(1,3);
+    console.log("cmp-choice is",cmpChoice);
+    const cmpRock=document.querySelector('#cmp-rock');
+    const cmpPaper=document.querySelector('#cmp-paper');
+    const cmpScissor=document.querySelector('#cmp-scissor');
+
 
     //assigne 1 rock 2 scissor and 3 paper
     //return rock scissors paper
     if(cmpChoice==1){
-        return "ROCK";
+        return cmpRock;
     }
     if(cmpChoice==2){
-        return "SCISSOR";
+        return cmpScissor;
     } if(cmpChoice==3){
-        return "PAPER";
+        return cmpPaper;
     }
     
-}//finish computer choice 
+}
 
-//make playerchoice function to take user input and return it 
 function playerChoice(){
+    const rock=document.querySelector('#player-rock');
+    const paper=document.querySelector('#player-paper');
+    const scissor=document.querySelector('#player-scissor');
 
-    // create  a string  variable userChoice that store the user input 
-    let userChoice=prompt("ROCK PAPER SCISSOR SHOOT!!");
-    // make user input  make it caseinsensitive 
+    startGame(rock);
+    startGame(paper);
+    startGame(scissor);
 
-    //return userChoice
-    return userChoice;
+  
     
-}//end of playerChoice function 
+}
 
-//make  winnerCheck function that takes userChoice and cmpChoice returns the winner 
+function startGame(playerChoice){
+    playerChoice.addEventListener('click',(e)=>{
+        addButtonClickAnimation(playerChoice);
+        const cmpChoice=computerChoice();
+        addButtonClickAnimation(cmpChoice);
+        console.log(`player${playerChoice.getAttribute('id')} and cmp choose${cmpChoice}`)
+        const winner=winnerCheck(playerChoice,cmpChoice);
+        resultDisplay(winner);
+        removeButtonClickAnimation(playerChoice);
+        removeButtonClickAnimation(cmpChoice);
+
+        
+    })
+}
+
+function resultDisplay(whoWon){
+    const display= document.querySelector("#result-display");
+    if(whoWon==="USER WIN"){
+        display.textContent="YOU WIN!!" 
+    }
+    if(whoWon==="CMP WIN"){
+        display.textContent="YOU LOOSE!!"
+    }
+    if(whoWon==="IT'S A DRAW"){
+        display.textContent="SHOOT!! DRAW"
+    }
+    setTimeout((e)=>{display.textContent="PICK ONE"},1500)
+}
+
+function addButtonClickAnimation(onWhich){
+    onWhich.classList.add("buttonOnClick");
+
+}
+
+function removeButtonClickAnimation(onWhich){
+    setTimeout((e)=>onWhich.classList.remove('buttonOnClick'),1500);
+}
+
+playerChoice();
+
+
+
 function winnerCheck(userChoice,cmpChoice){
-
-
-    
-    
     //compare userChoice and cmpChoice rock>scissors scissors>paper paper>rock
     //return the result 
-    if( (userChoice.toUpperCase()==="ROCK" && cmpChoice==="ROCK") ||(userChoice.toUpperCase()==="PAPER" && cmpChoice==="PAPER")||(userChoice.toUpperCase()==="SCISSOR" && cmpChoice==="SCISSOR")){
-        return "IT'S A DRAW"
+    if( (userChoice.getAttribute('id')==="player-rock"&& cmpChoice.getAttribute('id')==="cmp-rock") ||(userChoice.getAttribute('id')==="player-paper" && cmpChoice.getAttribute('id')==="cmp-paper")||(userChoice.getAttribute('id')==="player-scissor" && cmpChoice.getAttribute('id')==="cmp-scissor")){
+        return console.log("IT'S A DRAW"),"IT'S A DRAW";
     }
 
 
-    if((userChoice.toUpperCase()==="ROCK" && cmpChoice==="SCISSOR")||(userChoice.toUpperCase()==="PAPER" && cmpChoice==="ROCK")||(userChoice.toUpperCase()==="SCISSOR" && cmpChoice==="PAPER")){
-    return "USER WIN"
+    if((userChoice.getAttribute('id')==="player-rock"&& cmpChoice.getAttribute('id')==="cmp-scissor") ||(userChoice.getAttribute('id')==="player-paper" &&  cmpChoice.getAttribute('id')==="cmp-rock")||(userChoice.getAttribute('id')==="player-scissor" && cmpChoice.getAttribute('id')==="cmp-paper")){
+    return console.log("USER WIN"),"USER WIN";
     }
 
     
-    if((userChoice.toUpperCase()==="ROCK" && cmpChoice==="PAPER")||(userChoice.toUpperCase()==="PAPER" && cmpChoice==="SCISSOR")||(userChoice.toUpperCase()==="SCISSOR" && cmpChoice==="ROCK")){
-    return "cmp WIN";
+    if(((userChoice.getAttribute('id')==="player-rock"&& cmpChoice.getAttribute('id')==="cmp-paper")) ||(userChoice.getAttribute('id')==="player-paper" && cmpChoice.getAttribute('id')==="cmp-scissor")||(userChoice.getAttribute('id')==="player-scissor" && cmpChoice.getAttribute('id')==="cmp-rock")){
+    return console.log("CMP WIN"),"CMP WIN";
     }
-    
-}//end of winnerCheck 
 
-
-// craete a gamePlay function that  runs the game returnn nothing
-function gamePlay(){
-    let userChoice;
-    let cmpChoice;
-    let winner;
-    //run it five times and print the winner 
-    for (let i = 0; i < 5; i++) {
-        userChoice=playerChoice();
-        cmpChoice=computerChoice();
-        winner=winnerCheck(userChoice,cmpChoice);
-        console.log(winner)
+    // if(userChoice.getAttribute('id')==="player-rock"){
+    //     return 'rock';
+    // }else if(playerChoice.getAttribute('id')==="player-paper"){
+    //     return'paper';
+    // }else {
+    //     return "scissor" ;
         
-    }
+    // }
+
+    
+}
+
+
+
+// function gamePlay(){
+//     let userChoice;
+//     let cmpChoice;
+//     let winner;
+    
+//     for (let i = 0; i < 5; i++) {
+//         userChoice=playerChoice();
+//         cmpChoice=computerChoice();
+//         winner=winnerCheck(userChoice,cmpChoice);
+//         console.log(winner)
+        
+//     }
   
-} //end of the programe 
+// } 
 
 
-//run the game 
-const paly =gamePlay();
+// //run the game 
+// const paly =gamePlay();
 
 
 
