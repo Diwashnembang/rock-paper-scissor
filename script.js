@@ -38,10 +38,13 @@ function playerChoice() {
     const rock = document.querySelector("#player-rock");
     const paper = document.querySelector("#player-paper");
     const scissor = document.querySelector("#player-scissor");
-    let run = true;
+    const homePage=document.querySelector(".home-page");
+    const recordPage=document.querySelector(".game-log");
     startGame(rock);
     startGame(paper);
     startGame(scissor);
+    homePage.addEventListener("click",e=> hide(".home-page","hidden"));
+    recordPage.addEventListener("click",e=> hide(".game-log","hidden"));
 }
 
 function startGame(playerChoice) {
@@ -62,11 +65,11 @@ function gamePlay() {
         recordHistory(history, round);
         removeButtonClickAnimation(this);
         removeButtonClickAnimation(cmpChoice);
-        console.log(history);
+  
     }
     if(round===4){
-        hide("#game-play","hidden"); 
-        hide(".home-page","hidden");    
+        hide("#game-play","hidden");   
+        unhide(".game-log","hidden");
     }
 }
 
@@ -162,9 +165,13 @@ function playAgain(){
 
 function reset(){
     round=-1;
+    console.log("the history is ",history);
+    history.length=0;
     unhide("#game-play","hidden")
 
 }
+
+
 const time=500;
 let history = [];
 let round = -1;

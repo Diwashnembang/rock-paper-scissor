@@ -156,6 +156,8 @@ header h1 {
 }
 .img-box img {
   height: 104px;
+  max-width: 100%;
+  min-width: 85%;
 }
 
 #result-display h2 {
@@ -191,15 +193,6 @@ header h1 {
   margin-top: 52px;
 }
 
-.arrow-img img {
-  display: inline-block;
-  grid-column: 4/6;
-  justify-self: center;
-}
-
-.arrow-img {
-  margin-top: 16px;
-}
 
 #game-log-text h1 {
   font-family: "Backto1982";
@@ -225,7 +218,7 @@ header h1 {
   justify-self: start;
 
   font-family: Reem Kufi;
-  font-size:40px;
+  font-size:30px;
   font-style: normal;
   font-weight: 400;
   line-height: 72px;
