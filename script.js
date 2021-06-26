@@ -50,7 +50,8 @@ function startGame(playerChoice) {
 
 function gamePlay() {
     ++round;
-    if (round <= 5) {
+    console.log(round);
+    if (round < 5) {
         addButtonClickAnimation(this);
         const cmpChoice = computerChoice();
         addButtonClickAnimation(cmpChoice);
@@ -63,22 +64,41 @@ function gamePlay() {
         removeButtonClickAnimation(cmpChoice);
         console.log(history);
     }
+    if(round===4){
+        hide("#game-play","hidden");     
+    }
+}
+
+function hide(domName,add){
+    const body=document.querySelector(`${domName}`);
+    setTimeout((e)=>body.classList.add(`${add}`),time);
+
+}
+
+function unhide(domName,add){
+    const body=document.querySelector(`${domName}`);
+    body.classList.remove(`${add}`);
+
 }
 
 function resultDisplay(whoWon) {
     const display = document.querySelector("#result-display");
     if (whoWon === "USER WIN") {
         display.textContent = "YOU WIN!!";
+        display.style.color="green";
     }
     if (whoWon === "CMP WIN") {
         display.textContent = "YOU LOOSE!!";
+        display.style.color="green";
     }
     if (whoWon === "IT'S A DRAW") {
         display.textContent = "SHOOT!! DRAW";
+        display.style.color="green";
     }
     setTimeout((e) => {
         display.textContent = "PICK ONE";
-    }, 1500);
+        display.style.color="black";
+    }, time);
 }
 
 function addButtonClickAnimation(onWhich) {
@@ -86,7 +106,7 @@ function addButtonClickAnimation(onWhich) {
 }
 
 function removeButtonClickAnimation(onWhich) {
-    setTimeout((e) => onWhich.classList.remove("buttonOnClick"), 1500);
+    setTimeout((e) => onWhich.classList.remove("buttonOnClick"), time);
 }
 
 function winnerCheck(userChoice, cmpChoice) {
@@ -133,6 +153,19 @@ function recordHistory(history, round) {
     records[round].textContent = `Round ${round + 1}:${history[round]}`;
 }
 
+function playAgain(){
+    const playAgainButton=document.querySelector(".try-again");
+    playAgainButton.addEventListener("click",reset);
+
+}
+
+function reset(){
+    round=-1;
+    unhide("#game-play","hidden")
+
+}
+const time=1500;
 let history = [];
 let round = -1;
 playerChoice();
+playAgain();
