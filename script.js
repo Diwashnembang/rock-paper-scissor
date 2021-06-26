@@ -38,13 +38,13 @@ function playerChoice() {
     const rock = document.querySelector("#player-rock");
     const paper = document.querySelector("#player-paper");
     const scissor = document.querySelector("#player-scissor");
-    const homePage=document.querySelector(".home-page");
-    const recordPage=document.querySelector(".game-log");
+    const homePage=document.querySelector(".start");
+   
     startGame(rock);
     startGame(paper);
     startGame(scissor);
     homePage.addEventListener("click",e=> hide(".home-page","hidden"));
-    recordPage.addEventListener("click",e=> hide(".game-log","hidden"));
+     hide(".game-log","hidden");
 }
 
 function startGame(playerChoice) {
