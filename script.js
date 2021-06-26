@@ -65,7 +65,8 @@ function gamePlay() {
         console.log(history);
     }
     if(round===4){
-        hide("#game-play","hidden");     
+        hide("#game-play","hidden"); 
+        hide(".home-page","hidden");    
     }
 }
 
@@ -89,11 +90,11 @@ function resultDisplay(whoWon) {
     }
     if (whoWon === "CMP WIN") {
         display.textContent = "YOU LOOSE!!";
-        display.style.color="green";
+        display.style.color="Red";
     }
     if (whoWon === "IT'S A DRAW") {
         display.textContent = "SHOOT!! DRAW";
-        display.style.color="green";
+        display.style.color="blue";
     }
     setTimeout((e) => {
         display.textContent = "PICK ONE";
@@ -164,7 +165,7 @@ function reset(){
     unhide("#game-play","hidden")
 
 }
-const time=1500;
+const time=500;
 let history = [];
 let round = -1;
 playerChoice();
